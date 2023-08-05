@@ -31,17 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.btnChatAdmin = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.assignedJobsBtn = new System.Windows.Forms.Button();
+            this.productsBtn = new System.Windows.Forms.Button();
+            this.vehiclesBtn = new System.Windows.Forms.Button();
+            this.jobStatusBtn = new System.Windows.Forms.Button();
+            this.suppliersBtn = new System.Windows.Forms.Button();
+            this.trackJobsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnChatAdmin
             // 
             this.btnChatAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChatAdmin.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnChatAdmin.BackColor = System.Drawing.Color.Thistle;
             this.btnChatAdmin.Location = new System.Drawing.Point(86, 201);
             this.btnChatAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnChatAdmin.Name = "btnChatAdmin";
@@ -54,7 +59,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button1.BackColor = System.Drawing.Color.Thistle;
             this.button1.Location = new System.Drawing.Point(248, 201);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 37);
@@ -62,19 +67,6 @@
             this.button1.Text = "TaskManagement";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.IndianRed;
-            this.button2.Location = new System.Drawing.Point(407, 201);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 37);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Jobs history";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -110,7 +102,7 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.LightPink;
+            this.button3.BackColor = System.Drawing.Color.Thistle;
             this.button3.Location = new System.Drawing.Point(248, 262);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
@@ -120,18 +112,100 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // assignedJobsBtn
+            // 
+            this.assignedJobsBtn.BackColor = System.Drawing.Color.Thistle;
+            this.assignedJobsBtn.Location = new System.Drawing.Point(409, 201);
+            this.assignedJobsBtn.Name = "assignedJobsBtn";
+            this.assignedJobsBtn.Size = new System.Drawing.Size(136, 37);
+            this.assignedJobsBtn.TabIndex = 10;
+            this.assignedJobsBtn.Text = "Assigned Jobs";
+            this.assignedJobsBtn.UseVisualStyleBackColor = false;
+            this.assignedJobsBtn.Click += new System.EventHandler(this.assignedJobsBtn_Click);
+            // 
+            // productsBtn
+            // 
+            this.productsBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.productsBtn.BackColor = System.Drawing.Color.Thistle;
+            this.productsBtn.Location = new System.Drawing.Point(409, 262);
+            this.productsBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.productsBtn.Name = "productsBtn";
+            this.productsBtn.Size = new System.Drawing.Size(136, 37);
+            this.productsBtn.TabIndex = 11;
+            this.productsBtn.Text = "Products";
+            this.productsBtn.UseVisualStyleBackColor = false;
+            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
+            // 
+            // vehiclesBtn
+            // 
+            this.vehiclesBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.vehiclesBtn.BackColor = System.Drawing.Color.Thistle;
+            this.vehiclesBtn.Location = new System.Drawing.Point(86, 262);
+            this.vehiclesBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.vehiclesBtn.Name = "vehiclesBtn";
+            this.vehiclesBtn.Size = new System.Drawing.Size(136, 37);
+            this.vehiclesBtn.TabIndex = 12;
+            this.vehiclesBtn.Text = "Vehicles";
+            this.vehiclesBtn.UseVisualStyleBackColor = false;
+            this.vehiclesBtn.Click += new System.EventHandler(this.vehiclesBtn_Click);
+            // 
+            // jobStatusBtn
+            // 
+            this.jobStatusBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobStatusBtn.BackColor = System.Drawing.Color.Thistle;
+            this.jobStatusBtn.Location = new System.Drawing.Point(248, 201);
+            this.jobStatusBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.jobStatusBtn.Name = "jobStatusBtn";
+            this.jobStatusBtn.Size = new System.Drawing.Size(136, 37);
+            this.jobStatusBtn.TabIndex = 13;
+            this.jobStatusBtn.Text = "JobStatus";
+            this.jobStatusBtn.UseVisualStyleBackColor = false;
+            this.jobStatusBtn.Click += new System.EventHandler(this.jobStatusBtn_Click);
+            // 
+            // suppliersBtn
+            // 
+            this.suppliersBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.suppliersBtn.BackColor = System.Drawing.Color.Thistle;
+            this.suppliersBtn.Location = new System.Drawing.Point(167, 307);
+            this.suppliersBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.suppliersBtn.Name = "suppliersBtn";
+            this.suppliersBtn.Size = new System.Drawing.Size(136, 37);
+            this.suppliersBtn.TabIndex = 14;
+            this.suppliersBtn.Text = "Suppliers";
+            this.suppliersBtn.UseVisualStyleBackColor = false;
+            this.suppliersBtn.Click += new System.EventHandler(this.suppliersBtn_Click);
+            // 
+            // trackJobsBtn
+            // 
+            this.trackJobsBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.trackJobsBtn.BackColor = System.Drawing.Color.Thistle;
+            this.trackJobsBtn.Location = new System.Drawing.Point(336, 307);
+            this.trackJobsBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.trackJobsBtn.Name = "trackJobsBtn";
+            this.trackJobsBtn.Size = new System.Drawing.Size(136, 37);
+            this.trackJobsBtn.TabIndex = 15;
+            this.trackJobsBtn.Text = "Track Jobs";
+            this.trackJobsBtn.UseVisualStyleBackColor = false;
+            this.trackJobsBtn.Click += new System.EventHandler(this.trackJobsBtn_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Thistle;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(618, 370);
+            this.Controls.Add(this.trackJobsBtn);
+            this.Controls.Add(this.suppliersBtn);
+            this.Controls.Add(this.jobStatusBtn);
+            this.Controls.Add(this.vehiclesBtn);
+            this.Controls.Add(this.productsBtn);
+            this.Controls.Add(this.assignedJobsBtn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnChatAdmin);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -146,10 +220,15 @@
         #endregion
         private System.Windows.Forms.Button btnChatAdmin;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button assignedJobsBtn;
+        private System.Windows.Forms.Button productsBtn;
+        private System.Windows.Forms.Button vehiclesBtn;
+        private System.Windows.Forms.Button jobStatusBtn;
+        private System.Windows.Forms.Button suppliersBtn;
+        private System.Windows.Forms.Button trackJobsBtn;
     }
 }

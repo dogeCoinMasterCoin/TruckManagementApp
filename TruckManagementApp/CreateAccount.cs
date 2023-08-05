@@ -29,10 +29,10 @@ namespace TruckManagementApp
             // Verifică dacă parolele coincid
             if (password != repeatPassword)
             {
-                MessageBox.Show("Password & confirm password are diffrent.");
+                MessageBox.Show("Password & confirm password are different.");
                 return;
             }
-            else if (username.Length < 6 || password.Length < 6 || repeatPassword.Length < 6)
+            else if ( password.Length < 6 || repeatPassword.Length < 6)
             {
                 MessageBox.Show("Username or password need to be at least 6 characters long.");
                 return;
@@ -57,7 +57,7 @@ namespace TruckManagementApp
                         command.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Cont creat cu succes!");
+                    MessageBox.Show("Account successfully created!");
                     MainPage mainPage = new MainPage();
                     mainPage.Show();
                     this.Hide();

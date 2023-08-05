@@ -21,9 +21,10 @@ namespace TruckManagementApp
             InitializeComponent();
         }
 
+        //Maps btn
         private void lastJobBtn_Click(object sender, EventArgs e)
         {
-            LastLocation lastLocation = new LastLocation();
+            Maps lastLocation = new Maps();
             lastLocation.Show();
         }
 
@@ -36,9 +37,11 @@ namespace TruckManagementApp
 
         private void TasksManagement_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'truckManagementAppDataSet1.JOBS' table. You can move, or remove it, as needed.
-            this.jOBSTableAdapter.Fill(this.truckManagementAppDataSet1.JOBS);
+            // TODO: This line of code loads data into the 'truckManagementAppDataSet.USERS' table. You can move, or remove it, as needed.
             this.uSERSTableAdapter.Fill(this.truckManagementAppDataSet.USERS);
+            LoadDataIntoDataGridView();
+
+
         }
 
         //Display users with firstName equals with searchBar text
@@ -84,6 +87,36 @@ namespace TruckManagementApp
         private void jOBSBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void LoadDataIntoDataGridView()
+        {
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=TruckManagementApp;Trusted_Connection=True;";
+            string selectQuery = "SELECT user_id, user_name, first_name, last_name FROM USERS";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(selectQuery, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
     }
 }
