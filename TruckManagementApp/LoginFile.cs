@@ -14,6 +14,8 @@ namespace TruckManagementApp
 {
     public partial class LoginFile : Form
     {
+        public int LoggedUserId { get; private set; }
+
         public LoginFile()
         {
             InitializeComponent();
@@ -26,13 +28,17 @@ namespace TruckManagementApp
 
             if (VerifyUser(username, password))
             {
+                LoggedUserId = GetUserId(username);
+                //MessageBox.Show("Autentificare reușită!");
+
                 MainPage mainPage = new MainPage();
                 mainPage.Show();
-                this.Hide();                  
+                this.Hide();
+
             }
             else
             {
-                MessageBox.Show("Nume de utilizator sau parolă incorecte!");
+                MessageBox.Show("Username or password are wrong!");
             }
         }
         private bool VerifyUser(string username, string password)
@@ -50,6 +56,23 @@ namespace TruckManagementApp
                 int count = (int)command.ExecuteScalar();
 
                 return count > 0;
+            }
+        }
+
+        private int GetUserId(string username)
+        {
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=TruckManagementApp;Trusted_Connection=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT user_id FROM Users WHERE user_name = @username";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                return (result != null) ? Convert.ToInt32(result) : 0;
             }
         }
 

@@ -22,33 +22,13 @@ namespace TruckManagementApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Configurează serverul Self-Hosted SignalR
-            string url = "http://localhost:8080";
-            using (WebApp.Start<Startup>(url))
-            {
-                Console.WriteLine("Serverul SignalR rulează la adresa: " + url);
-                Console.ReadLine();
-            }
-
-            //Application.Run(new LoginFile());
-            Application.Run(new TasksManagement());
+            Application.Run(new LoginFile());
+            //Application.Run(new TasksManagement());
 
             //Database connection
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=TruckManagementApp;Trusted_Connection=True;";
+            string connectionString = "Server=localhost\\SQLEXPRESS01;Database=TruckManagementApp;Trusted_Connection=True;";
             connection = new SqlConnection(connectionString);
             connection.Open();
         }
     }
-
-        public class Startup
-        {
-            public void Configuration(IAppBuilder app)
-            {
-                // Permite accesul Cross-Origin (CORS)
-                app.UseCors(CorsOptions.AllowAll);
-
-                // Configurare rutare și setare a hub-ului SignalR
-                app.MapSignalR();
-            }
-        }
 }

@@ -12,7 +12,7 @@ namespace TruckManagementApp.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -27,10 +27,21 @@ namespace TruckManagementApp.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J1OFR84\\SQLEXPRESS;Initial Catalog=TruckManagementApp;Integra" +
-            "ted Security=True")]
+            "ted Security=True;trustServerCertificate = true")]
         public string TruckManagementAppConnectionString {
             get {
                 return ((string)(this["TruckManagementAppConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ALEX\\SQLEXPRESS01;Initial Catalog=TruckManagementApp;Integrated Secur" +
+            "ity=True")]
+        public string TruckManagementAppConnectionString1 {
+            get {
+                return ((string)(this["TruckManagementAppConnectionString1"]));
             }
         }
     }
